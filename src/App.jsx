@@ -5,6 +5,7 @@ import './App.css'
 
 import AuthPage from './AuthPage'
 import ChatsPage from './ChatsPage'
+import IndexPage from "./IndexPage"
 
 function App() {
   const [user, setUser] = useState(undefined)
@@ -12,7 +13,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AuthPage onAuth={user => setUser(user)}/>} />
+        <Route path="/" element={<IndexPage/>} />
+        <Route path="1/" element={<AuthPage onAuth={user => setUser(user)}/>} />
         <Route path="chat/" element={<ChatsPage user={user}/>} />
       </Routes>
     </Router>
